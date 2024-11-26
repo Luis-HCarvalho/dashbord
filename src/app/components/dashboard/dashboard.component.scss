@@ -1,0 +1,33 @@
+mat-drawer-container {
+    background-color: rgb(29, 29, 29);
+}
+mat-card {
+    margin: auto;
+    padding: 50px;
+    width: 750px;
+    height: 470px;
+}
+mat-grid-tile {
+    max-height: fit-content;
+}
+mat-grid-list {
+    background-color: rgb(31, 31, 31);
+}
+.row {
+    // width: 100%;
+    display: flex;
+
+    mat-card {
+        // width: fit-content;
+        // max-height: ;
+        margin: 10px;
+    }
+    .no-chart-card {
+        min-width: 320px;
+        width: 325px;
+        max-height: 120px;
+    }
+}
+mat-drawer {
+    background-color: whitesmoke;
+}

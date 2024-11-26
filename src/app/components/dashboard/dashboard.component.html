@@ -1,0 +1,113 @@
+<app-header (sidebarToggle)="drawer.toggle()"></app-header>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list>
+            <mat-list-item>
+                <div matListItemTitle>
+                    <mat-slide-toggle [checked]="true">
+                        <strong>Activity</strong>
+                    </mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+
+        <mat-list>
+            <mat-list-item>
+                <div matListItemTitle>
+                    <mat-slide-toggle [checked]="true">
+                        <strong>Dates</strong>
+                    </mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+
+        <mat-list>
+            <mat-list-item>
+                <div matListItemTitle>
+                    <mat-slide-toggle [checked]="true">
+                        <strong>Average Reading Time</strong>
+                    </mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+
+        <mat-list>
+            <mat-list-item>
+                <div matListItemTitle>
+                    <mat-slide-toggle [checked]="true">
+                        <strong>Popular Subjects</strong>
+                    </mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+
+        <mat-list>
+            <mat-list-item>
+                <div matListItemTitle>
+                    <mat-slide-toggle [checked]="true">
+                        <strong>Engagement</strong>
+                    </mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+    </mat-drawer>
+
+    <div class="row">
+        <mat-card appearance="raised">
+            <mat-card-header>
+                <mat-card-title>Activity</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <canvas
+                baseChart
+                [type]="'bar'"
+                [data]="weekdayData"
+            ></canvas>
+        </mat-card>
+        <div>
+            <mat-card appearance="raised" class="no-chart-card">
+                <strong>Number of Data Points: {{ datalen }}</strong>
+            </mat-card>
+
+            <mat-card appearance="raised" class="no-chart-card">
+                <strong> {{ minDate }} - {{ maxDate }} </strong>
+            </mat-card>
+            
+            <mat-card appearance="raised" class="no-chart-card">
+                <strong>Average Reading Time: {{ avgReadingTime }} min</strong>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card appearance="raised">
+            <mat-card-header>
+                <mat-card-title>Popular Subjects</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <canvas
+                baseChart
+                [type]="'pie'"
+                [data]="tagData"
+            ></canvas>
+        </mat-card>
+        
+        <mat-card appearance="raised">
+            <mat-card-header>
+                <mat-card-title>Engagement</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <canvas
+                baseChart
+                [type]="'radar'"
+                [data]="engagementData"
+            ></canvas>
+        </mat-card>  
+    </div>
+</mat-drawer-container>
