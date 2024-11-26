@@ -34,7 +34,7 @@ export class DataProcessingService {
     }
 
     private async processData() {
-        const data = await this.SFStore.fetch(10);
+        const data = await this.SFStore.fetch();
         if (!data) return Promise.reject();
 
         this.totalDataLen = data.length;
